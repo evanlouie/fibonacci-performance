@@ -59,26 +59,14 @@ Fib = (function() {
 
 })();
 
-console.time("Recursive");
-
-console.log(Fib.fib(40));
-
-console.timeEnd("Recursive");
-
 console.time("Memoized");
-
-console.log(Fib.fib_mem(40));
-
+console.log(Fib.fib_mem(10000));
 console.timeEnd("Memoized");
 
 console.time("Tail");
-
-console.log(Fib.fib_tail(40));
-
+console.log(Fib.fib_tail(10000));
 console.timeEnd("Tail");
 
 console.time("Iterative");
-
-console.log(Fib.fib_itr(40));
-
+console.log(Fib.fib_itr(10000));
 console.timeEnd("Iterative");

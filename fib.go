@@ -11,22 +11,22 @@ func main() {
   var elapsed time.Duration
 
 	start = time.Now()
-	fmt.Println(fib(42))
+	fmt.Println(fib(10000))
 	elapsed = time.Since(start)
 	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
 
   start = time.Now()
-	fmt.Println(fibMem(42, make(map[int]*big.Int)))
+	fmt.Println(fibMem(10000, make(map[int]*big.Int)))
 	elapsed = time.Since(start)
 	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
 
   start = time.Now()
-	fmt.Println(fibTail(42, big.NewInt(1), big.NewInt(1)))
+	fmt.Println(fibTail(10000, big.NewInt(1), big.NewInt(1)))
 	elapsed = time.Since(start)
 	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
 
   start = time.Now()
-	fmt.Println(fibItr(42))
+	fmt.Println(fibItr(10000))
 	elapsed = time.Since(start)
 	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
 }

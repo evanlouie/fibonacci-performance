@@ -58,17 +58,17 @@ end
 include Fib
 
 time = Time.now
-puts fib(40)
+puts fib(10000)
 puts "Recursive: #{Time.now - time}"
 
 time = Time.now
-puts fib_mem(40)
+puts fib_mem(10000)
 puts "Memoized: #{Time.now - time}"
 
 time = Time.now
-puts fib_tail(40)
+puts fib_tail(10000)
 puts "Tail Recursive: #{Time.now - time}"
 
 time = Time.now
-puts fib_itr(40)
+puts fib_itr(10000)
 puts "Iterative: #{Time.now - time}"
