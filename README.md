@@ -33,4 +33,6 @@ I was amazed at the performance optimizations Ruby has done in terms of autoscal
 
 # Caveats
 
-This is an EXTREMELY dumb performance test. Meaning that I only really wanted to see how the languages would perform when I tried to transfer the same code from language to language without any sort of optimizations. Because of this, I default to the BigInt type for Go and Crystal. A test using variadic functions to optimize between Int32/Int64/BigInt would most definitely make Go and Crystal leagues faster. I also wouldn't be surprised if this performance measure changed drastically as Go and Crystal optimize there BigInt implementations.
+- This is an EXTREMELY dumb performance test. Meaning that I only really wanted to see how the languages would perform when I tried to transfer the same code from language to language without any sort of optimizations. Because of this, I default to the BigInt type for Go and Crystal.
+- A test using variadic functions to optimize between Int32/Int64/BigInt would most definitely make Go and Crystal leagues faster. I also wouldn't be surprised if this performance measure changed drastically as Go and Crystal optimize there BigInt implementations.
+- I chose the number 42 simply because any higher and the recursive solutions for Ruby, Crystal, and Go because unbearably slow. Crystal and Go's memoized/tail-recursive/iterative solutions would most definitely be much faster with a very large `n` (>100000)
