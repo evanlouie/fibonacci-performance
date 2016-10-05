@@ -1,18 +1,20 @@
+require "big"
+
 module Fib
   # The most readable solution! thats slow and causes stack overflows...
-  def fib(n)
+  def fib(n : Int32) : BigInt
     if n <= 2
-      return 1
+      return BigInt.new(1)
     else
       return fib(n - 1) + fib(n - 2)
     end
   end
 
   # That fastest readable solution! that still causes stack overflows...
-  def fib_mem(n, memory = {})
+  def fib_mem(n : Int32, memory = Hash(Int32, BigInt).new) : BigInt
     if n <= 2
-      return 1
-    elsif memory[n]
+      return BigInt.new(1)
+    elsif memory[n]?
       return memory[n]
     else
       memory[n] = fib_mem(n - 1, memory) + fib_mem(n - 2, memory)
@@ -21,7 +23,7 @@ module Fib
   end
 
   # Tail recursive! Just as fast as memoizing! But still stack overflows... ruby doesn't TCO :(
-  def fib_tail(n, prev = 1, curr = 1)
+  def fib_tail(n : Int32, prev = BigInt.new(1), curr = BigInt.new(1)) : BigInt
     return prev if n == 1
     return curr if n == 2
 
@@ -29,9 +31,9 @@ module Fib
   end
 
   # The ultimate solution!
-  def fib_itr(n)
-    curr = 1
-    prev = 1
+  def fib_itr(n : Int32) : BigInt
+    curr = BigInt.new(1)
+    prev = BigInt.new(1)
     # curr and prev already seeded at 1, 1. so current fib is 2
     current_fib = 2
 

@@ -7,9 +7,27 @@ import (
 )
 
 func main() {
-	start := time.Now()
-	fmt.Println(fibItr(1000000))
-	elapsed := time.Since(start)
+  var start time.Time
+  var elapsed time.Duration
+
+	start = time.Now()
+	fmt.Println(fib(42))
+	elapsed = time.Since(start)
+	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
+
+  start = time.Now()
+	fmt.Println(fibMem(42, make(map[int]*big.Int)))
+	elapsed = time.Since(start)
+	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
+
+  start = time.Now()
+	fmt.Println(fibTail(42, big.NewInt(1), big.NewInt(1)))
+	elapsed = time.Since(start)
+	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
+
+  start = time.Now()
+	fmt.Println(fibItr(42))
+	elapsed = time.Since(start)
 	fmt.Println(fmt.Sprintf("Time: %s", elapsed))
 }
 
